@@ -17,7 +17,7 @@ TI ads1x15 AD converter I2C drivers for raspberry pi-3 running node.js.
 You can download and install these packages from <https://npmjs.org> using *npm*.
 
 ### Hardware compatibilty:
-This software have been tested with a raspberry pi-3 model, revision number: `a02082`.
+This software has been tested with a raspberry pi-3 model, revision number: `a02082`.
 You can find the hardware information typing `cat /proc/cpuinfo` on your raspberry pi-3.
 The software should run without any problem on all the raspberry pi models with I2C `bus address = 0x48`.
 Install the i2c tool (`sudo apt-get install i2c-tools`) to retrieve information on your I2C interface.
