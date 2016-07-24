@@ -13,9 +13,8 @@ TI ads1x15 AD converter I2C drivers for raspberry pi-3 running node.js.
 ### Required packages:
 * sleep
 * i2c-bus
-</br></br>
-You can download and install these packages from <https://npmjs.org> using *npm*.
 
+You can download and install these packages from <https://npmjs.org> using *npm*.
 
 ### Hardware compatibilty:
 This software have been tested with a raspberry pi-3 model, revision number: `a02082`.
