@@ -14,7 +14,7 @@ Required packages:
 1- sleep
 2- i2c-bus
 
-you can download and install this packages from npmjs.org using npm.
+you can download and install these packages from npmjs.org using npm.
 
 Hardware compatibilty:
 This software have been tested with a raspberry pi-3 model revision number: a02082.
@@ -29,7 +29,7 @@ File description:
 3- /tests/ads1x15_ex_differential.js : sample test program
 
 Compatibility issues:
-The software is not compatible with node.js v. 6.x because the constructor of the Buffer object used in I2C.js is
+This software is not compatible with node.js v. 6.x because the constructor of the Buffer object used in I2C.js is
 deprecated in node.js v. 6.x. To solve this issue you have to change the Buffer instances on lines 63 and 78 of I2C.js
 with the new instantion method defined in node.js v. 6.x. Please, refer to node documentation to learn how to do that.
 
