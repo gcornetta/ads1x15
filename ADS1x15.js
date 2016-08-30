@@ -172,20 +172,20 @@ var i2cb = require('./I2C');
     // If sps is in the dictionary it returns the value of the constant
     // othewise it returns the value for 250sps.
     if (this.ic == __IC_ADS1015){
-      config |= (spsADS1015.sps || __ADS1015_REG_CONFIG_DR_1600SPS);
+      config |= (spsADS1015[sps] || __ADS1015_REG_CONFIG_DR_1600SPS);
     }  
     else {
-      if ( !(sps in spsADS1115) & this.debug){	  
+      if ( !(spsADS1115[sps]) & this.debug){	  
 	       console.log("ADS1x15: Invalid sps specified: " + sps + ", using 250sps");
       }        
-      config |= (spsADS1115.sps || __ADS1115_REG_CONFIG_DR_250SPS);
+      config |= (spsADS1115[sps] || __ADS1115_REG_CONFIG_DR_250SPS);
     }
 
     // Set PGA/voltage range, defaults to +-6.144V
-    if ( !(pga in pgaADS1x15) & this.debug){	  
+    if ( !(pgaADS1x15[pga]) & this.debug){	  
       console.log("ADS1x15: Invalid pga specified: " + pga +", using 6144mV");     
     }
-    config |= (pgaADS1x15.pga || __ADS1015_REG_CONFIG_PGA_6_144V);
+    config |= (pgaADS1x15[pga] || __ADS1015_REG_CONFIG_PGA_6_144V);
     this.pga = pga;
 
     // Set the channel to be converted
@@ -266,19 +266,19 @@ var i2cb = require('./I2C');
     // If sps is in the dictionary it returns the value of the constant
     // othewise it returns the value for 250sps.
     if (this.ic == __IC_ADS1015){
-      config |= (spsADS1015.sps || __ADS1015_REG_CONFIG_DR_1600SPS);
+      config |= (spsADS1015[sps] || __ADS1015_REG_CONFIG_DR_1600SPS);
     } else {
-      if ( !(sps in spsADS1115) & this.debug){  
+      if ( !(spsADS1115[sps]) & this.debug){  
 	       console.log("ADS1x15: Invalid sps specified: " + sps + ", using 250sps");  
       } 
-      config |= (spsADS1115.sps || __ADS1115_REG_CONFIG_DR_250SPS);     
+      config |= (spsADS1115[sps] || __ADS1115_REG_CONFIG_DR_250SPS);     
     }
 
     // Set PGA/voltage range, defaults to +-6.144V
-    if ( !(pga in pgaADS1x15) & this.debug){	  
+    if ( !(pgaADS1x15[pga]) & this.debug){	  
       console.log("ADS1x15: Invalid pga specified: " + pga + ", using 6144mV");
     }
-    config |= (pgaADS1x15.pga || __ADS1015_REG_CONFIG_PGA_6_144V);       
+    config |= (pgaADS1x15[pga] || __ADS1015_REG_CONFIG_PGA_6_144V);       
     this.pga = pga;
 
     // Set 'start single-conversion' bit
@@ -382,19 +382,19 @@ var i2cb = require('./I2C');
     // If sps is in the dictionary it returns the value of the constant
     // othewise it returns the value for 250sps
     if (this.ic == __IC_ADS1015){
-      config |= (spsADS1015.sps || __ADS1015_REG_CONFIG_DR_1600SPS);
+      config |= (spsADS1015[sps] || __ADS1015_REG_CONFIG_DR_1600SPS);
     } else {
-      if ( (!(sps in spsADS1115)) & this.debug){	  
+      if ( (!(spsADS1115)) & this.debug){	  
 	       console.log("ADS1x15: Invalid pga specified: " + sps + ", using 6144mV");
       }        
-      config |= (spsADS1115.sps || __ADS1115_REG_CONFIG_DR_250SPS);
+      config |= (spsADS1115[sps] || __ADS1115_REG_CONFIG_DR_250SPS);
     }
   
     // Set PGA/voltage range, defaults to +-6.144V
-    if ( !(pga in pgaADS1x15) & this.debug){	  
+    if ( !(pgaADS1x15[pga]) & this.debug){	  
       console.log("ADS1x15: Invalid pga specified: " + sps + ", using 6144mV");
     } 
-    config |= (pgaADS1x15.pga || __ADS1015_REG_CONFIG_PGA_6_144V);      
+    config |= (pgaADS1x15[pga] || __ADS1015_REG_CONFIG_PGA_6_144V);      
     this.pga = pga; 
     
     // Set the channel to be converted
@@ -463,19 +463,19 @@ var i2cb = require('./I2C');
     // If sps is in the dictionary it returns the value of the constant
     // othewise it returns the value for 250sps.
     if (this.ic == __IC_ADS1015){
-      config |= (spsADS1015.sps || __ADS1015_REG_CONFIG_DR_1600SPS); 
+      config |= (spsADS1015[sps] || __ADS1015_REG_CONFIG_DR_1600SPS); 
     } else {
-      if ( !(sps in spsADS1115) & this.debug) {	  
+      if ( !(spsADS1115[sps]) & this.debug) {	  
 	      console.log("ADS1x15: Invalid sps specified: " + sps + ", using 250sps");
       }       
-      config |= (spsADS1115.sps || __ADS1115_REG_CONFIG_DR_250SPS);
+      config |= (spsADS1115[sps] || __ADS1115_REG_CONFIG_DR_250SPS);
     }
 
     // Set PGA/voltage range, defaults to +-6.144V
-    if ( (!(pga in pgaADS1x15)) & this.debug) {	  
+    if ( (!(pgaADS1x15[pga])) & this.debug) {	  
       console.log("ADS1x15: Invalid pga specified: " + sps + ", using 6144mV");
     } 
-    config |= (pgaADS1x15.pga || __ADS1015_REG_CONFIG_PGA_6_144V);
+    config |= (pgaADS1x15[pga] || __ADS1015_REG_CONFIG_PGA_6_144V);
     this.pga = pga; 
     
     // Set channels
@@ -610,22 +610,22 @@ var i2cb = require('./I2C');
     // If sps is in the dictionary it returns the value of the constant
     // othewise it returns the value for 250sps
     if (this.ic == __IC_ADS1015) {
-      if ( (!(sps in spsADS1015)) && this.debug) {	  
+      if ( (!(spsADS1015[sps])) && this.debug) {	  
 	      console.log("ADS1x15: Invalid sps specified: " + sps + ", using 1600sps");
       }    
-      config |= (spsADS1015.sps || __ADS1015_REG_CONFIG_DR_1600SPS);
+      config |= (spsADS1015[sps] || __ADS1015_REG_CONFIG_DR_1600SPS);
     } else {
-      if ((!(sps in spsADS1115)) && this.debug) {	  
+      if ((!(spsADS1115[sps])) && this.debug) {	  
 	      console.log("ADS1x15: Invalid sps specified: " + sps + ", using 250sps");
       }   
-      config |= (spsADS1115.sps || __ADS1115_REG_CONFIG_DR_2500SPS);
+      config |= (spsADS1115[sps] || __ADS1115_REG_CONFIG_DR_2500SPS);
     }  
 
     // Set PGA/voltage range, defaults to +-6.144V
-    if ( (!(pga in pgaADS1x15)) && this.debug) {	  
+    if ( (!(pgaADS1x15[pga])) && this.debug) {	  
       console.log("ADS1x15: Invalid pga specified: " + pga + ", using 6144mV");
     }
-    config |= (pgaADS1x15.pga || __ADS1015_REG_CONFIG_PGA_6_144V); 
+    config |= (pgaADS1x15[pga] || __ADS1015_REG_CONFIG_PGA_6_144V); 
     this.pga = pga;
     
     // Set the channel to be converted
@@ -713,22 +713,22 @@ var i2cb = require('./I2C');
     // If sps is in the dictionary (defined in init()) it returns the value of the constant
     // othewise it returns the value for 250sps. This saves a lot of if/elif/else code!
     if (this.ic == __IC_ADS1015){
-      if ( !(sps in spsADS1015) && this.debug) {	  
+      if ( !(spsADS1015[sps]) && this.debug) {	  
 	      console.log("ADS1x15: Invalid sps specified: " + sps + ", using 1600sps");
       }  
-      config |= (spsADS1015.sps || __ADS1015_REG_CONFIG_DR_1600SPS); 
+      config |= (spsADS1015[sps] || __ADS1015_REG_CONFIG_DR_1600SPS); 
     } else {
-      if ( !(sps in spsADS1115) && this.debug) {	  
+      if ( !(spsADS1115[sps]) && this.debug) {	  
 	      console.log("ADS1x15: Invalid sps specified: " +sps + ", using 250sps");
       }       
-      config |= (spsADS1115.sps || __ADS1115_REG_CONFIG_DR_250SPS);
+      config |= (spsADS1115[sps] || __ADS1115_REG_CONFIG_DR_250SPS);
     }
       
     // Set PGA/voltage range, defaults to +-6.144V
-    if (!(pga in pgaADS1x15) && this.debug) {	  
+    if (!(pgaADS1x15[pga]) && this.debug) {	  
       console.log("ADS1x15: Invalid pga specified: " + pga + ", using 6144mV");
     }       
-    config |= (pgaADS1x15.pga || __ADS1015_REG_CONFIG_PGA_6_144V);
+    config |= (pgaADS1x15[pga] || __ADS1015_REG_CONFIG_PGA_6_144V);
     this.pga = pga;
     
     // Set channels
